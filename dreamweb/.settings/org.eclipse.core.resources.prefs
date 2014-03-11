@@ -1,7 +1,7 @@
-#Thu Nov 29 16:22:59 KST 2012
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/web/common/check_user.jsp=UTF-8
 encoding//WebContent/WEB-INF/web/include/edit_menu.jsp=UTF-8
+encoding//src/nextep/cp/CpController.java=UTF-8
 encoding//src/nextep/develop/NewDevelopController.java=UTF-8
 encoding//src/nextep/pro/message_ko.properties=UTF-8
 encoding//src/nextep/userxl/UserxlController.java=UTF-8
