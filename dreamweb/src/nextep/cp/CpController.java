@@ -38,6 +38,7 @@ public class CpController extends MultiActionController {
 		request.setCharacterEncoding("UTF-8");
 		
 		
+		System.out.println("asdfasdf");
 		
 		String search_str = (request.getParameter("search_str")!=null)? request.getParameter("search_str") : "";
 		int go_page = (request.getParameter("go_page")!=null)? Integer.parseInt(request.getParameter("go_page")) : 1;
@@ -90,7 +91,7 @@ public class CpController extends MultiActionController {
 	
 	
 	public ModelAndView getCpWrite(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		//logger.info("getNewDevelopWrite 호출합니다.");
+		//logger.info("getNewDevelopWrite �몄텧�⑸땲��");
 				
 		String cp_no="";
 		
@@ -99,7 +100,7 @@ public class CpController extends MultiActionController {
 				
 	
 	    
-	    //view finder에게 보낸다.
+	    //view finder�먭쾶 蹂대궦��
 	    ModelAndView mav = new ModelAndView("cp/write");
 	    mav.addObject("nationList", nationList);
 	    	    
@@ -113,7 +114,7 @@ public class CpController extends MultiActionController {
 		
 		Cp cp= new Cp();
 
-		/* board 객체 Binding */
+		/* board 媛앹껜 Binding */
 		bind(request, cp);
 				
 		int result=cpDao.insCp(cp);
@@ -127,7 +128,7 @@ public class CpController extends MultiActionController {
 	
 	
 	public ModelAndView getCpModify(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		//logger.info("getNewDevelopWrite 호출합니다.");
+		//logger.info("getNewDevelopWrite �몄텧�⑸땲��");
 		
 		
 		String cp_no=(request.getParameter("cp_no")==null)? "": request.getParameter("cp_no");
@@ -148,7 +149,7 @@ public class CpController extends MultiActionController {
 		request.setAttribute("go_page", go_page);
 		request.setAttribute("cp_no", cp_no);
 			    
-	    //view finder에게 보낸다.
+	    //view finder�먭쾶 蹂대궦��
 	    ModelAndView mav = new ModelAndView("cp/modify");
 	    mav.addObject("cpView", cpView);
 	    mav.addObject("nationList", nationList);
@@ -167,7 +168,7 @@ public class CpController extends MultiActionController {
 		
 		Cp cp= new Cp();
 
-		/* board 객체 Binding */
+		/* board 媛앹껜 Binding */
 		bind(request, cp);
 						
 		
