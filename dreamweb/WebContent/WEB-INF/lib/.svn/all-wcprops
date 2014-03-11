@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib
+END
+commons-lang.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/commons-lang.jar
+END
+commons-io-2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/commons-io-2.2.jar
+END
+poi-3.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/poi-3.0.1.jar
+END
+mail.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/mail.jar
+END
+commons-logging.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/commons-logging.jar
+END
+junit-4.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/junit-4.4.jar
+END
+standard.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/standard.jar
+END
+cglib-nodep-2.1_3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/cglib-nodep-2.1_3.jar
+END
+jstl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/jstl.jar
+END
+commons-pool.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/commons-pool.jar
+END
+aspectjweaver.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/aspectjweaver.jar
+END
+spring-webmvc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/spring-webmvc.jar
+END
+cos.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/cos.jar
+END
+ibatis-2.3.0.677.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/ibatis-2.3.0.677.jar
+END
+sqljdbc4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/sqljdbc4.jar
+END
+spring.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/spring.jar
+END
+commons-fileupload-1.2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/commons-fileupload-1.2.2.jar
+END
+commons-dbcp.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/lib/commons-dbcp.jar
+END

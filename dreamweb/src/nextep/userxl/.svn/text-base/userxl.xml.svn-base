@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+                        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+                        
+<sqlMap namespace="NEWDEVLOP">
+	
+	<typeAlias alias="Userxl" type="nextep.userxl.Userxl"/>
+	
+	
+	
+	<resultMap id="resultUserxlList" class="Userxl">
+		<result property="user_no" column="USER_NO"  />	
+		<result property="login_id" column="LOGIN_ID" />	
+		<result property="user_pwd" column="USER_PWD" />	
+		<result property="user_nm" column="USER_NM" />	
+		<result property="user_nick" column="USER_NICK" />
+		<result property="yyyymmdd" column="YYYYMMDD" />
+		<result property="hp" column="HP" />				
+		<result property="user_sex" column="USER_SEX" />			
+		<result property="nation_code" column="NATION_CODE" />							
+		<result property="reg_date" column="REG_DATE" />			
+		<result property="equip_code" column="EQUIP_CODE" />			
+		<result property="code_nm" column="CODE_NM" />	
+		<result property="nation_nm" column="NATION_NM" />				
+								
+	</resultMap>
+	
+	
+	
+	<select id="getUserxlCount" parameterClass="Userxl"  resultClass="java.lang.Integer">
+		select count(*) CNT from ct_user
+		<isNotEmpty property="login_id" prepend="where">
+			login_id = #login_id#
+		</isNotEmpty>	
+	</select>
+	
+	
+	<select id="getUserxlList" parameterClass="Userxl" resultMap="resultUserxlList">	
+		SELECT * FROM
+		(
+			SELECT ROW_NUMBER() OVER(ORDER BY USER_NO DESC) RM, USER_NO, LOGIN_ID, USER_PWD, USER_NM, USER_NICK, USER_YY +USER_MM+ USER_DD YYYYMMDD, 
+			HP, USER_SEX, A.NATION_CODE, 
+			CONVERT(VARCHAR(10),REG_DATE,126) REG_DATE, EQUIP_CODE, CODE_NM, NATION_NM
+			FROM CT_USER A left outer join CT_CODE B on A.EQUIP_GRP_CODE=B.GRP_CODE AND A.EQUIP_CODE=B.CODE
+			left outer join CT_NATION c on A.NATION_CODE=C.NATION_CODE	
+			<isNotEmpty property="login_id" prepend="where">
+				login_id = #login_id#
+			</isNotEmpty>			
+		) T1 WHERE RM BETWEEN #start_num# AND #end_num#		
+	</select>
+	
+	
+	<select id="getUserxlListExecl" parameterClass="Userxl" resultMap="resultUserxlList">	
+		
+		SELECT ROW_NUMBER() OVER(ORDER BY USER_NO DESC) RM, USER_NO, LOGIN_ID, USER_PWD, USER_NM, USER_NICK, USER_YY +USER_MM+ USER_DD YYYYMMDD, 
+		HP, USER_SEX, A.NATION_CODE, 
+		CONVERT(VARCHAR(10),REG_DATE,126) REG_DATE, EQUIP_CODE, CODE_NM, NATION_NM
+		FROM CT_USER A left outer join CT_CODE B on A.EQUIP_GRP_CODE=B.GRP_CODE AND A.EQUIP_CODE=B.CODE
+		left outer join CT_NATION c on A.NATION_CODE=C.NATION_CODE	
+		<isNotEmpty property="login_id" prepend="where">
+			login_id = #login_id#
+		</isNotEmpty>		
+				
+	</select>
+	
+	
+	<select id="getUserxlView" parameterClass="java.lang.String" resultClass="Userxl">	
+		select USER_NO, LOGIN_ID, USER_PWD, USER_NM, USER_NICK, USER_YY +USER_MM+ USER_DD yyyymmdd, HP, USER_SEX, a.NATION_CODE, 
+		REG_DATE, EQUIP_CODE, code_nm, NATION_NM
+		from ct_user a, CT_CODE b, CT_NATION c
+		where a.EQUIP_GRP_CODE=b.GRP_CODE and a.EQUIP_CODE=b.CODE
+		and a.NATION_CODE=c.NATION_CODE
+		and user_no=#user_no#	
+	</select>
+	
+	
+		
+	
+</sqlMap>

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/dream/!svn/ver/2/trunk/src/nextep/userxl
+END
+Userxl.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/dream/!svn/ver/2/trunk/src/nextep/userxl/Userxl.java
+END
+UserxlController.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/dream/!svn/ver/2/trunk/src/nextep/userxl/UserxlController.java
+END
+userxl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/dream/!svn/ver/2/trunk/src/nextep/userxl/userxl.xml
+END
+UserxlService.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/dream/!svn/ver/2/trunk/src/nextep/userxl/UserxlService.java
+END
+UserxlServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/dream/!svn/ver/2/trunk/src/nextep/userxl/UserxlServiceImpl.java
+END
+UserxlDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/dream/!svn/ver/2/trunk/src/nextep/userxl/UserxlDao.java
+END
+UserxlDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/dream/!svn/ver/2/trunk/src/nextep/userxl/UserxlDaoImpl.java
+END
+UserxlListExeclView.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/dream/!svn/ver/2/trunk/src/nextep/userxl/UserxlListExeclView.java
+END

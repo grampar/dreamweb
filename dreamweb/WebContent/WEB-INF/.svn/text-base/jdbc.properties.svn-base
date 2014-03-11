@@ -1,0 +1,4 @@
+jdbc.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+jdbc.url=jdbc:sqlserver://1.212.6.74:1433;DatabaseName=dream
+jdbc.username=sa
+jdbc.password=dkswjs0

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+                        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+                        
+<sqlMap namespace="NOTICEINFO">
+	
+	<typeAlias alias="Notice" type="nextep.noticeinfo.NoticeInfo"/>
+	
+	
+	<resultMap id="resultGameCodeList" class="Notice">
+		<result property="game_seq" column="GAME_SEQ"  />	
+		<result property="game_nm" column="GAME_NM" />
+	</resultMap>
+	
+	
+	<select id="getGameCode" parameterClass="Notice" resultMap="resultGameCodeList">
+		SELECT A.GAME_SEQ, GAME_NM 
+		FROM GT_GAME A, GT_GAME_LAN B
+		WHERE A.GAME_SEQ=B.GAME_SEQ
+		AND B.NATION_CODE='KR' 
+		order by game_seq
+	</select>
+	
+	
+	<resultMap id="resultNoticeList" class="Notice">
+		<result property="n_seq" column="N_SEQ"  />	
+		<result property="game_seq" column="GAME_SEQ" />	
+		<result property="main_title" column="MAIN_TITLE" />	
+		<result property="reg_date" column="REG_DATE" />								
+		<result property="code_nm" column="CODE_NM" />
+		<result property="equip_code_nm" column="EQUIP_CODE_NM" />
+	</resultMap>
+	
+	
+	
+	<select id="getNoticeCount" parameterClass="Notice"  resultClass="java.lang.Integer">
+		SELECT COUNT(*) cnt
+		FROM CT_NOTICE A , CT_CODE B, CT_CODE C
+		WHERE A.KIND_GRP_CODE=B.GRP_CODE AND A.KIND_CODE=B.CODE
+		AND A.EQUIP_GRP_CODE=C.GRP_CODE AND A.EQUIP_CODE=C.CODE
+		<isNotEmpty property="search_str" prepend="and">
+			main_title like '%' + #search_str# + '%'
+		</isNotEmpty>
+		<isNotEmpty property="equip_code" prepend="and">
+			a.EQUIP_CODE=#equip_code#
+		</isNotEmpty>
+		<isNotEmpty property="kind_code" prepend="and">
+			a.KIND_CODE=#kind_code#
+		</isNotEmpty>		
+	</select>
+	
+	
+	<select id="getNoticeList" parameterClass="Notice" resultMap="resultNoticeList">	
+		SELECT * FROM
+		(
+			SELECT ROW_NUMBER() OVER(ORDER BY N_SEQ DESC) RM, N_SEQ, GAME_SEQ, MAIN_TITLE, CONVERT(VARCHAR(10), REG_DATE, 126) REG_DATE, B.CODE_NM, 
+			C.CODE_NM EQUIP_CODE_NM
+			FROM CT_NOTICE A , CT_CODE B, CT_CODE C
+			WHERE A.KIND_GRP_CODE=B.GRP_CODE AND A.KIND_CODE=B.CODE
+			AND A.EQUIP_GRP_CODE=C.GRP_CODE AND A.EQUIP_CODE=C.CODE
+			AND GAME_SEQ=#game_seq#
+			<isNotEmpty property="search_str" prepend="and">
+				main_title like '%' + #search_str# + '%'
+			</isNotEmpty>	
+			<isNotEmpty property="equip_code" prepend="and">
+				a.EQUIP_CODE=#equip_code#
+			</isNotEmpty>
+			<isNotEmpty property="kind_code" prepend="and">
+				a.KIND_CODE=#kind_code#
+			</isNotEmpty>				
+		) T1 WHERE RM BETWEEN #start_num# AND #end_num#		
+	</select>
+	
+		
+	<resultMap id="resultNoticeNationView" class="Notice">
+		<result property="nn_seq" column="NN_SEQ"  />	
+		<result property="nation_code" column="NATION_CODE" />	
+		<result property="title" column="TITLE" />	
+		<result property="cmnt" column="CMNT" />
+		<result property="reg_date" column="REG_DATE" />		
+		<result property="nation_nm" column="NATION_NM" />										
+	</resultMap>
+	
+	
+	<select id="getNoticeNationList" parameterClass="java.lang.Integer" resultMap="resultNoticeNationView">	
+	    SELECT NN_SEQ, A.NATION_CODE, TITLE, CMNT, CONVERT(VARCHAR(10), REG_DATE, 126) REG_DATE, NATION_NM
+		FROM CT_NOTICE_NATION A INNER JOIN CT_NATION B ON A.NATION_CODE=B.NATION_CODE
+		WHERE A.N_SEQ=#n_seq#
+	</select>
+	
+	<select id="getNoticeNationView" parameterClass="java.lang.Integer" resultMap="resultNoticeNationView">	
+		SELECT NN_SEQ, NATION_CODE, TITLE, CMNT, CONVERT(VARCHAR(10), REG_DATE, 126) REG_DATE, '' NATION_NM
+		FROM CT_NOTICE_NATION 
+		WHERE NN_SEQ=#nn_seq#
+	</select>
+	
+		
+	
+	<select id="getNseq" resultClass="java.lang.Integer">
+		SELECT ISNULL(MAX(N_SEQ), 0)+1 n_seq FROM CT_NOTICE
+	</select>
+	
+	<parameterMap id="paramInsertNotice" class="Notice">	   	    
+	    <parameter property="n_seq"  />	 	    
+	    <parameter property="game_seq" />	    
+	    <parameter property="main_title" />
+	    <parameter property="kind_code" />
+	    <parameter property="equip_code" />	    	    	    	    	 	    
+	</parameterMap>	
+	
+	<insert id="insertNotice" parameterMap="paramInsertNotice">
+	<![CDATA[
+		INSERT INTO CT_NOTICE(N_SEQ, GAME_SEQ, MAIN_TITLE, REG_DATE, KIND_GRP_CODE, KIND_CODE, EQUIP_GRP_CODE, EQUIP_CODE, VIEW_YN)
+		values(?, ?, ?, GETDATE(),'NKC', ?, 'EQC', ?, 'N')
+	]]>
+	</insert>
+	
+	<parameterMap id="paramInsertNoticeNation" class="Notice">	   	    
+	    <parameter property="n_seq"  />	 	    
+	    <parameter property="nation_code" />	    
+	    <parameter property="title" />
+	    <parameter property="cmnt" />	    	    	    	 	    
+	</parameterMap>	
+	
+	<insert id="insertNoticeNation" parameterMap="paramInsertNoticeNation">
+	<![CDATA[
+		insert into ct_notice_nation(N_SEQ, NATION_CODE, TITLE, CMNT, REG_DATE)
+		values(?, ?, ?, ?, GETDATE())
+	]]>
+	</insert>
+	
+	<select id="checkNoticeNationCount" parameterClass="Notice"  resultClass="java.lang.Integer">
+		SELECT COUNT(*) CNT 
+		FROM CT_NOTICE_NATION 
+		WHERE N_SEQ=#n_seq# AND NATION_CODE=#nation_code#
+	</select>
+	
+	
+	
+	
+	
+	<update id="uptNoticeNation" parameterClass="java.util.Map">
+	<![CDATA[
+		UPDATE CT_NOTICE_NATION SET TITLE=#title#, CMNT=#cmnt# WHERE NN_SEQ=#nn_seq#		
+	]]>
+	</update>
+	
+	<delete id="delMainNotice" parameterClass="java.lang.Integer">
+		delete from CT_NOTICE  WHERE N_SEQ=#n_seq#
+	</delete>
+	
+	<delete id="delMainNoticeNation" parameterClass="java.lang.Integer">
+		delete from CT_NOTICE_NATION  WHERE N_SEQ=#n_seq#
+	</delete>
+	
+	<delete id="delNoticeNation" parameterClass="java.lang.Integer">
+		delete from CT_NOTICE_NATION  WHERE NN_SEQ=#nn_seq#
+	</delete>
+	
+	<update id="uptNoticeView" parameterClass="java.util.Map">
+	<![CDATA[
+		UPDATE CT_NOTICE SET view_yn=#view_yn# WHERE N_SEQ=#n_seq#		
+	]]>
+	</update>
+	
+	<select id="getNoticeView" parameterClass="java.lang.Integer" resultClass="Notice">
+		SELECT MAIN_TITLE, VIEW_YN 
+		FROM CT_NOTICE 
+		WHERE n_seq=#n_seq#
+	</select>
+	
+</sqlMap>

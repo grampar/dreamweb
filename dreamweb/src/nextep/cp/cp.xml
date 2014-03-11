@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+                        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+                        
+<sqlMap namespace="NEXTEP.CP">
+	
+	<typeAlias alias="Cp" type="nextep.cp.Cp"/>
+	
+			
+	<resultMap id="resultCpList" class="Cp">
+		<result property="cp_no" column="CP_NO"  />	
+		<result property="cp_id" column="CP_ID" />	
+		<result property="cp_pwd" column="CP_PWD" />	
+		<result property="company_nm" column="COMPANY_NM" />								
+		<result property="contact_nm" column="CONTACT_NM" />
+		<result property="contact_tel" column="CONTACT_TEL" />		
+		<result property="reg_date" column="REG_DATE" />
+		<result property="nation_code" column="NATION_CODE" />
+		<result property="nation_nm" column="NATION_NM" />		
+	</resultMap>
+	
+	
+	
+	<select id="getCpCount" parameterClass="Cp"  resultClass="java.lang.Integer">
+		SELECT COUNT(*) CNT 
+		FROM GT_CP A LEFT OUTER JOIN CT_NATION B ON A.NATION_CODE=B.NATION_CODE		
+	</select>
+	
+	
+	<select id="getCpList" parameterClass="Cp" resultMap="resultCpList">	
+		SELECT * FROM
+		(
+			SELECT ROW_NUMBER() OVER(ORDER BY A.CP_NO DESC) RM, CP_NO, CP_ID, CP_PWD, COMPANY_NM, CONTACT_NM, CONTACT_TEL, REG_DATE, A.NATION_CODE, NATION_NM 
+			FROM GT_CP A LEFT OUTER JOIN CT_NATION B ON A.NATION_CODE=B.NATION_CODE			
+		) T1 WHERE RM BETWEEN #start_num# AND #end_num#		
+	</select>
+		
+	
+	<select id="getCpView" parameterClass="java.lang.String" resultClass="Cp">
+	    select top 1 CP_NO, CP_ID, CP_PWD, COMPANY_NM, CONTACT_NM, CONTACT_TEL, REG_DATE, NATION_CODE, ADDR
+		from gt_cp
+		where CP_NO=#cp_no#
+	</select>
+		
+	
+	<select id="getCpNo" resultClass="java.lang.String">
+		SELECT 'CP' + REPLICATE('0', 8-LEN(CP_NO)) + CONVERT(VARCHAR(8), CP_NO)
+		FROM
+		(
+			SELECT CONVERT(INT, SUBSTRING(CP_NO, 3, LEN(CP_NO)))+1 CP_NO
+			FROM
+			(
+				SELECT 
+					CASE WHEN MAX(CP_NO) IS NULL 
+					THEN 
+						'CP00000001'
+					ELSE 
+						MAX(CP_NO)
+					END CP_NO  
+				FROM GT_CP
+			) T
+		) T
+	</select>
+	
+	
+	<parameterMap id="paramInsertCp" class="Cp">	   	    
+	    <parameter property="cp_no"  />	 	    
+	    <parameter property="cp_id" />	    
+	    <parameter property="cp_pwd" />
+	    <parameter property="company_nm" />
+	    <parameter property="contact_nm" />
+	    <parameter property="contact_tel" />	    
+	    <parameter property="addr" />
+	    <parameter property="nation_code" />	    
+	</parameterMap>	
+	
+	<insert id="insCp" parameterMap="paramInsertCp">
+	<![CDATA[
+		INSERT INTO GT_CP(CP_NO,CP_ID, CP_PWD, COMPANY_NM, CONTACT_NM, CONTACT_TEL, ADDR, NATION_CODE, REG_DATE)
+		VALUES(?, ?, ?, ?, ?, ?, ?, ?, GETDATE())				
+	]]>
+	</insert>
+	
+	<parameterMap id="paramUpdateCp" class="Cp">
+	    <parameter property="cp_id" />	    
+	    <parameter property="cp_pwd" />
+	    <parameter property="company_nm" />
+	    <parameter property="contact_nm" />
+	    <parameter property="contact_tel" />	    
+	    <parameter property="addr" />
+	    <parameter property="nation_code" />
+	    <parameter property="cp_no"  />
+	</parameterMap>	
+	
+	<update id="uptCp" parameterMap="paramUpdateCp">
+	<![CDATA[
+		UPDATE GT_CP SET CP_ID=?, CP_PWD=?, COMPANY_NM=?, CONTACT_NM=?, CONTACT_TEL=?, ADDR=?, NATION_CODE=?
+		WHERE CP_NO=?		
+	]]>
+	</update>
+	
+	
+	<delete id="delCp" parameterClass="java.lang.String">
+	<![CDATA[
+		DELETE FROM GT_CP WHERE CP_NO=#cp_no#
+	]]>
+	</delete>
+	
+	
+	
+	
+</sqlMap>

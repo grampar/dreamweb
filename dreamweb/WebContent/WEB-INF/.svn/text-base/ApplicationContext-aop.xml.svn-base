@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xmlns:aop="http://www.springframework.org/schema/aop"
+	     xmlns:tx="http://www.springframework.org/schema/tx"
+	     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+     
+     
+    
+
+	<bean id="loggingAdvice" class="nextep.aop.LoggingAdvice" />
+	
+	<!-- 
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target"><ref local="targetBean"/></property>
+		
+		<property name="interceptorNames">
+		<list>
+			<value>helloAdvisor</value>
+		</list>
+		</property>
+	</bean>
+	 -->
+	 
+	 <!-- 
+	<bean id="proxyCreator222" class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" />
+	
+	
+	<bean id="helloAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">	
+		<property name="advice"><ref local="loggingAdvice"/></property>
+		
+		<property name="pointcut">
+			<bean class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+			<property name="patterns">
+			    <list>
+			        <value>.*get.*</value>
+					<value>.*ins.*</value>
+					<value>.*upt.*</value>					
+				</list>
+			</property>
+			</bean>
+		</property>
+	</bean>
+	 -->
+	
+	
+	  
+	 <bean id="proxy" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+		    <list>		        				
+				<value>login*</value>
+				<value>notice*</value>				
+				<value>new*</value>
+			</list>
+		</property>		
+		<property name="interceptorNames">
+		<list>
+			<value>helloAdvisor</value>
+		</list>
+		</property>
+	</bean>
+	
+	<bean id="helloAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">	
+		<property name="advice"><ref local="loggingAdvice"/></property>
+		
+		<property name="pointcut">
+			<bean class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+			<property name="patterns">
+			    <list>
+			        <value>.*get.*</value>
+					<value>.*ins.*</value>
+					<value>.*upt.*</value>					
+				</list>
+			</property>
+			</bean>
+		</property>
+	</bean>
+	 
+     
+ </beans>

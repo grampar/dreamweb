@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--
+  - Application context definition for "Cubic" DispatcherServlet.
+  -->
+
+
+<beans>
+
+	
+    
+	
+		
+	<!-- ============================== login ======================= -->
+	 
+	<bean id="loginController" class="nextep.login.LoginController">
+		<property name="methodNameResolver">
+			<ref local="loginCommonMethodNameResolver"/>
+		</property>
+		<property name="commonDao" ref="commonDao"/>
+		<property name="loginDao" ref="loginDao" />	    
+	</bean>
+	
+	<bean id="loginCommonMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+	    <property name="mappings">
+		<props>
+	   	    <prop key="/login/login_ok.do">getLoginInfo</prop>
+	   	    
+		</props>
+	    </property>
+	</bean>
+	<bean id="loginCommonUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	    <property name="mappings">
+	        <props>
+	 	   		<prop key="/login/login_ok.do">loginController</prop>	 	   			 	   		
+	        </props>
+	    </property>
+	</bean>
+		
+	    
+	
+		
+
+</beans>

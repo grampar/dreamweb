@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+		
+		
+	<!-- ============================== game ======================= -->	
+	
+	<bean id="cpController" class="nextep.cp.CpController">
+		<property name="methodNameResolver">
+			<ref local="cpCommonMethodNameResolver"/>
+		</property>	
+		<property name="cpDao" ref="cpDao" />
+		<property name="commonDao" ref="commonDao" />		
+	</bean>
+	
+	<bean id="cpCommonMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">	
+	    <property name="mappings">
+		<props>
+	   	    <prop key="/cp/list.do">getCpList</prop>	   	    	    
+	   	    <prop key="/cp/write.do">getCpWrite</prop>
+	   	    <prop key="/cp/write_ok.do">insCp</prop>
+	   	    <prop key="/cp/modify.do">getCpModify</prop>
+	   	    <prop key="/cp/modify_ok.do">uptCp</prop>
+	   	    
+		</props>
+	    </property>
+	</bean>
+	
+	<bean id="cpCommonUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	    <property name="mappings">
+	        <props>
+	        	<prop key="/cp/list.do">cpController</prop>	   	    	    
+		   	    <prop key="/cp/write.do">cpController</prop>
+		   	    <prop key="/cp/write_ok.do">cpController</prop>
+		   	    <prop key="/cp/modify.do">cpController</prop>
+		   	    <prop key="/cp/modify_ok.do">cpController</prop>	   	    
+	        	
+	        </props>
+	    </property>
+	</bean>
+	
+	
+	
+	
+
+</beans>

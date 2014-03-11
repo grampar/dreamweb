@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+    
+<beans>
+
+
+	<!-- jdbc.properties 외부설정 로딩-->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	    <property name="locations">
+	        <list>
+	            <value>/WEB-INF/jdbc.properties</value>
+	            <value>/WEB-INF/jdbc_xl.properties</value>
+	        </list>
+	    </property>
+	</bean>
+	
+	<!-- DBCP 설정  : 외부설정 이용 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"  destroy-method="close">	
+	    <property name="driverClassName" value="${jdbc.driverClassName}"/>
+	    <property name="url" value="${jdbc.url}"/>
+	    <property name="username" value="${jdbc.username}"/>
+	    <property name="password" value="${jdbc.password}"/>	    
+	   <property name="defaultAutoCommit" value="true"/>
+	    
+	    <property name="initialSize" value="5"/>
+	    <property name="maxActive" value="5"/>
+	    <property name="maxIdle" value="-1"/>
+	    <property name="maxWait" value="30000"/>
+	    <property name="validationQuery" value="SELECT 'AA' "/>
+	    <property name="testOnBorrow" value="true"/>
+	    <property name="testOnReturn" value="false"/>
+	    <property name="testWhileIdle" value="true"/>
+	    <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+
+	</bean>
+	
+	
+	
+	<!-- Transaction manager for a single JDBC DataSource -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	
+	
+	<!-- SqlMap Definition -->
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="WEB-INF/sqlmap-config.xml" />
+	</bean>
+		
+	
+	<bean id="newDevelopDao"  class="nextep.develop.NewDevelopDaoImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>		
+	</bean>
+	
+	<bean id="newDevelopService" class="nextep.develop.NewDevelopServiceImpl">
+		<property name="newDevelopDao" ref="newDevelopDao"/>
+	</bean>
+	
+	<bean id="noticeInfoDao"  class="nextep.noticeinfo.NoticeInfoDaoImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>		
+	</bean>
+	
+	<bean id="commonDao"  class="nextep.common.CommonDaoImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>		
+	</bean>
+	
+	
+	<bean id="loginDao"  class="nextep.login.LoginDaoImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>		
+	</bean>
+	
+	<bean id="gameDao"  class="nextep.game.GameDaoImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>		
+	</bean>
+	
+	<bean id="cpDao"  class="nextep.cp.CpDaoImpl">
+		<property name="sqlMapClient" ref="sqlMapClient"/>		
+	</bean>
+	
+	
+	
+	<!-- ######################### 2xlasia DB ############################## -->
+	
+	<!-- DBCP 설정  : 외부설정 이용 -->
+	<bean id="dataSource_xl" class="org.apache.commons.dbcp.BasicDataSource"  destroy-method="close">	
+	    <property name="driverClassName" value="${jdbc_xl.driverClassName}"/>
+	    <property name="url" value="${jdbc_xl.url}"/>
+	    <property name="username" value="${jdbc_xl.username}"/>
+	    <property name="password" value="${jdbc_xl.password}"/>	    
+	   <property name="defaultAutoCommit" value="true"/>
+	    
+	    <property name="initialSize" value="5"/>
+	    <property name="maxActive" value="5"/>
+	    <property name="maxIdle" value="-1"/>
+	    <property name="maxWait" value="30000"/>
+	    <property name="validationQuery" value="SELECT 'AA' "/>
+	    <property name="testOnBorrow" value="true"/>
+	    <property name="testOnReturn" value="false"/>
+	    <property name="testWhileIdle" value="true"/>
+	    <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+
+	</bean>
+	
+	<bean id="sqlMapClientXL" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="dataSource" ref="dataSource_xl" />
+		<property name="configLocation" value="WEB-INF/sqlmap-config-xl.xml" />
+	</bean>
+	
+	
+	
+	<bean id="userxlDao"  class="nextep.userxl.UserxlDaoImpl">
+		<property name="sqlMapClient" ref="sqlMapClientXL"/>		
+	</bean>
+	
+	<bean id="userxlService" class="nextep.userxl.UserxlServiceImpl">
+		<property name="userxlDao" ref="userxlDao"/>
+	</bean>
+		
+	
+
+    
+</beans>

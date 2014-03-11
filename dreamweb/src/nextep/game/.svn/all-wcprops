@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/dream/!svn/ver/2/trunk/src/nextep/game
+END
+GameDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/dream/!svn/ver/4/trunk/src/nextep/game/GameDaoImpl.java
+END
+GameDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/dream/!svn/ver/2/trunk/src/nextep/game/GameDao.java
+END
+GameController.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/dream/!svn/ver/4/trunk/src/nextep/game/GameController.java
+END
+game.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/dream/!svn/ver/4/trunk/src/nextep/game/game.xml
+END
+Game.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/dream/!svn/ver/4/trunk/src/nextep/game/Game.java
+END

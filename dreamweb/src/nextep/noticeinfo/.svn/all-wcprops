@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/dream/!svn/ver/2/trunk/src/nextep/noticeinfo
+END
+notice.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/dream/!svn/ver/4/trunk/src/nextep/noticeinfo/notice.xml
+END
+NoticeInfoDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/dream/!svn/ver/2/trunk/src/nextep/noticeinfo/NoticeInfoDao.java
+END
+NoticeInfoDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/dream/!svn/ver/2/trunk/src/nextep/noticeinfo/NoticeInfoDaoImpl.java
+END
+NoticeInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/dream/!svn/ver/2/trunk/src/nextep/noticeinfo/NoticeInfo.java
+END
+NoticeInfoController.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/dream/!svn/ver/2/trunk/src/nextep/noticeinfo/NoticeInfoController.java
+END

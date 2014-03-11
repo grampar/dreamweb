@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF
+END
+ApplicationContext-tran.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/ApplicationContext-tran.xml
+END
+jdbc.properties
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/jdbc.properties
+END
+jdbc_xl.properties
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/jdbc_xl.properties
+END
+sqlmap-config-xl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/sqlmap-config-xl.xml
+END
+sqlmap-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/sqlmap-config.xml
+END
+ApplicationContext-aop.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/ApplicationContext-aop.xml
+END
+ApplicationContext-dao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/ApplicationContext-dao.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web.xml
+END

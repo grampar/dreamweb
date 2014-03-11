@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+                        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+                        
+<sqlMap namespace="COMMON">
+	
+	<typeAlias alias="Common" type="nextep.common.Common"/>
+	
+	<resultMap id="resultCode" class="Common">
+		<result property="grp_code" column="GRP_CODE"  />	
+		<result property="code" column="CODE" />	
+		<result property="code_nm" column="CODE_NM" />
+	</resultMap>
+	
+	<select id="getCode" parameterClass="Common" resultMap="resultCode">
+		SELECT GRP_CODE, CODE, CODE_NM FROM CT_CODE
+		<dynamic prepend="WHERE">
+			<isNotEmpty property="grp_code" prepend="and">
+				grp_code=#grp_code#
+			</isNotEmpty>
+			<isNotEmpty property="code" prepend="and">
+				code=#code#
+			</isNotEmpty>
+      	</dynamic>				
+	</select>
+	
+	<resultMap id="resultNation" class="Common">
+		<result property="nation_code" column="NATION_CODE"  />	
+		<result property="nation_nm" column="NATION_NM" />	
+		<result property="nation_engnm" column="NATION_ENGNM" />
+		<result property="nation_tel" column="NATION_TEL" />
+		
+	</resultMap>
+	
+	<select id="getNation" resultMap="resultNation">
+		SELECT NATION_CODE, NATION_NM, NATION_ENGNM, NATION_TEL 
+		FROM CT_NATION
+		WHERE NATION_NM!=''		
+     <isNotEmpty prepend="and" property="nationcodeAry">
+       <iterate prepend=" nation_code in " property="nationcodeAry" open="(" close=")" conjunction=",">
+         #nationcodeAry[]#
+       </iterate>
+     </isNotEmpty>	    
+	   ORDER BY nation_nm
+	</select>
+	
+	
+	<resultMap id="resultCP" class="Common">
+		<result property="cp_no" column="CP_NO"  />	
+		<result property="cp_id" column="CP_ID" />	
+		<result property="company_nm" column="COMPANY_NM" />
+	</resultMap>
+	
+	<select id="getCP" parameterClass="Common" resultMap="resultCP">
+		SELECT CP_NO, CP_ID, COMPANY_NM FROM GT_CP
+		<isNotEmpty property="cp_no" prepend="where">
+				cp_no=#cp_no#
+		</isNotEmpty>						
+	</select>
+	
+	
+	
+</sqlMap>

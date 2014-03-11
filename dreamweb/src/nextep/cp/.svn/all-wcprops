@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/dream/!svn/ver/2/trunk/src/nextep/cp
+END
+Cp.java
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/dream/!svn/ver/3/trunk/src/nextep/cp/Cp.java
+END
+cp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/dream/!svn/ver/4/trunk/src/nextep/cp/cp.xml
+END
+CpController.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/dream/!svn/ver/4/trunk/src/nextep/cp/CpController.java
+END
+CpDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/dream/!svn/ver/2/trunk/src/nextep/cp/CpDao.java
+END
+CpDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/dream/!svn/ver/2/trunk/src/nextep/cp/CpDaoImpl.java
+END

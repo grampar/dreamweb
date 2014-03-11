@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+                        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+                        
+<sqlMap namespace="LOGIN">
+	
+	<typeAlias alias="Login" type="nextep.login.Login"/>
+	
+	
+	<resultMap id="resultLogin" class="login">
+		<result property="admin_id" column="ADMIN_ID"  />	
+		<result property="admin_nm" column="ADMIN_NM" />
+	</resultMap>
+	
+	
+	<select id="getLogin" parameterClass="Login" resultMap="resultLogin">
+		SELECT ADMIN_ID, ADMIN_NM
+		FROM CT_WEBADMIN
+		WHERE ADMIN_ID=#admin_id# AND ADMIN_PWD=#admin_pwd#
+	</select>
+
+	
+</sqlMap>

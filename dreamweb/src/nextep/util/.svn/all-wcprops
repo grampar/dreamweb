@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/dream/!svn/ver/2/trunk/src/nextep/util
+END
+CommonUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/dream/!svn/ver/2/trunk/src/nextep/util/CommonUtil.java
+END
+MailSender.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/dream/!svn/ver/2/trunk/src/nextep/util/MailSender.java
+END
+CookieUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/dream/!svn/ver/2/trunk/src/nextep/util/CookieUtil.java
+END
+SetCharacterEncodingFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/dream/!svn/ver/2/trunk/src/nextep/util/SetCharacterEncodingFilter.java
+END
+Today.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/dream/!svn/ver/2/trunk/src/nextep/util/Today.java
+END

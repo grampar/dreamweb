@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/setup
+END
+gameinfo-servlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/setup/gameinfo-servlet.xml
+END
+notice-servlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/setup/notice-servlet.xml
+END
+login-servlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/setup/login-servlet.xml
+END
+user-servlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/setup/user-servlet.xml
+END
+cp-servlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/setup/cp-servlet.xml
+END

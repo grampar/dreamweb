@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--
+  - Application context definition for "Cubic" DispatcherServlet.
+  -->
+
+
+<beans>
+
+	
+		
+		
+	<!-- ============================== notice ======================= -->
+	
+	<bean id="noticeInfoController" class="nextep.noticeinfo.NoticeInfoController">
+		<property name="methodNameResolver">
+			<ref local="noticeCommonMethodNameResolver"/>
+		</property>
+		<property name="noticeInfoDao" ref="noticeInfoDao" />
+		<property name="commonDao" ref="commonDao" />
+	</bean>
+	
+	<bean id="noticeCommonMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+	    <property name="mappings">
+		<props>
+	   	    <prop key="/gamenotice/list.do">getNoticeList</prop>	   	    	    
+	   	    <prop key="/gamenotice/write.do">getNoticeWrite</prop>
+	   	    <prop key="/gamenotice/write_ok.do">insNotice</prop>
+	   	    <prop key="/gamenotice/modify.do">getNoticeModify</prop>
+	   	    <prop key="/gamenotice/modify_ok.do">uptNotice</prop>
+	   	    <prop key="/gamenotice/del.do">delNotice</prop>
+	   	    <prop key="/gamenotice/maindel.do">mainDelNotice</prop>
+	   	    <prop key="/gamenotice/view_update.do">uptNoticeView</prop>
+		</props>
+	    </property>
+	</bean>
+	<bean id="noticeCommonUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	    <property name="mappings">
+	        <props>
+	 	   		<prop key="/gamenotice/list.do">noticeInfoController</prop>	 	   				   	    	
+	 	   		<prop key="/gamenotice/write.do">noticeInfoController</prop>	 	   		
+	 	   		<prop key="/gamenotice/write_ok.do">noticeInfoController</prop>
+	 	   		<prop key="/gamenotice/modify.do">noticeInfoController</prop>
+	 	   		<prop key="/gamenotice/modify_ok.do">noticeInfoController</prop>
+	 	   		<prop key="/gamenotice/del.do">noticeInfoController</prop>	 	
+	 	   		<prop key="/gamenotice/maindel.do">noticeInfoController</prop>  
+	 	   		<prop key="/gamenotice/view_update.do">noticeInfoController</prop> 		
+	        </props>
+	    </property>
+	</bean>
+	
+	<!--  ################################ file upload ##################################3 -->
+	
+	<bean id="uploadController" class="nextep.fileupload.UploadController">
+		<property name="methodNameResolver">
+			<ref local="uploadCommonMethodNameResolver"/>
+		</property>		
+		<property name="uploadDir" value="D:/java_web/dreamweb/WebContent/tmp/" />
+	</bean>
+	
+	<bean id="uploadCommonMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+	    <property name="mappings">
+		<props>
+	   	    <prop key="/upload/write.do">uploadForm</prop>
+	   	    <prop key="/upload/write_ok.do">FFFuploadFile</prop>	   	    
+		</props>
+	    </property>
+	</bean>
+	<bean id="uploadCommonUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	    <property name="mappings">
+	        <props>
+	 	   		<prop key="/upload/write.do">uploadController</prop>
+	 	   		<prop key="/upload/write_ok.do">uploadController</prop>
+	        </props>
+	    </property>
+	</bean>
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	  <property name="maxUploadSize" value="100000000" />
+	  <property name="uploadTempDir" ref="uploadDirResource" />
+	</bean>
+	
+	 	
+	<bean id="uploadDirResource" class="org.springframework.core.io.FileSystemResource">
+	    <constructor-arg>
+	       <value>D:/java_web/dreamweb/WebContent/</value>
+	    </constructor-arg>
+ 	</bean>
+ 	
+	
+
+</beans>

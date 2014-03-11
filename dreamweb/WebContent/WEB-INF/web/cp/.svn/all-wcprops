@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/cp
+END
+modify.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/dream/!svn/ver/4/trunk/WebContent/WEB-INF/web/cp/modify.jsp
+END
+write_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/cp/write_ok.jsp
+END
+list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/dream/!svn/ver/4/trunk/WebContent/WEB-INF/web/cp/list.jsp
+END
+write.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/dream/!svn/ver/4/trunk/WebContent/WEB-INF/web/cp/write.jsp
+END
+modify_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/dream/!svn/ver/4/trunk/WebContent/WEB-INF/web/cp/modify_ok.jsp
+END

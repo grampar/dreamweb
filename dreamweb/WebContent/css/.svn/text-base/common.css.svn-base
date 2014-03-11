@@ -1,0 +1,422 @@
+BODY {
+	COLOR: #5D5D5D; FONT-FAMILY: Tahoma, 돋움, verdana; FONT-SIZE: 8pt; scrollbar-3dlight-color: #595959; scrollbar-arrow-color: #ffffff; scrollbar-base-color: #CFCFCF; scrollbar-darkshadow-color: #FFFFFF; scrollbar-face-color: #CFCFCF; scrollbar-highlight-color: #FFFFFF; scrollbar-shadow-color: #595959
+}
+TABLE {
+	COLOR: #5D5D5D; FONT-FAMILY: Tahoma, 돋움, verdana; FONT-SIZE: 8pt; scrollbar-3dlight-color: #595959; scrollbar-arrow-color: #ffffff; scrollbar-base-color: #CFCFCF; scrollbar-darkshadow-color: #FFFFFF; scrollbar-face-color: #CFCFCF; scrollbar-highlight-color: #FFFFFF; scrollbar-shadow-color: #595959
+}
+INPUT {
+	COLOR: #5D5D5D; FONT-FAMILY: Tahoma, 돋움, verdana; FONT-SIZE: 8pt; scrollbar-3dlight-color: #595959; scrollbar-arrow-color: #ffffff; scrollbar-base-color: #CFCFCF; scrollbar-darkshadow-color: #FFFFFF; scrollbar-face-color: #CFCFCF; scrollbar-highlight-color: #FFFFFF; scrollbar-shadow-color: #595959
+}
+TEXTAREA {
+	COLOR: #5D5D5D; FONT-FAMILY: Tahoma, 돋움, verdana; FONT-SIZE: 8pt; scrollbar-3dlight-color: #595959; scrollbar-arrow-color: #ffffff; scrollbar-base-color: #CFCFCF; scrollbar-darkshadow-color: #FFFFFF; scrollbar-face-color: #CFCFCF; scrollbar-highlight-color: #FFFFFF; scrollbar-shadow-color: #595959
+}
+DIV {
+	COLOR: #5D5D5D; FONT-FAMILY: Tahoma, 돋움, verdana; FONT-SIZE: 8pt; scrollbar-3dlight-color: #595959; scrollbar-arrow-color: #ffffff; scrollbar-base-color: #CFCFCF; scrollbar-darkshadow-color: #FFFFFF; scrollbar-face-color: #CFCFCF; scrollbar-highlight-color: #FFFFFF; scrollbar-shadow-color: #595959
+}
+FORM {
+	COLOR: #5D5D5D; FONT-FAMILY: Tahoma, 돋움, verdana; FONT-SIZE: 8pt; scrollbar-3dlight-color: #595959; scrollbar-arrow-color: #ffffff; scrollbar-base-color: #CFCFCF; scrollbar-darkshadow-color: #FFFFFF; scrollbar-face-color: #CFCFCF; scrollbar-highlight-color: #FFFFFF; scrollbar-shadow-color: #595959
+}
+CENTER {
+	COLOR: #5D5D5D; FONT-FAMILY: Tahoma, 돋움, verdana; FONT-SIZE: 8pt; scrollbar-3dlight-color: #595959; scrollbar-arrow-color: #ffffff; scrollbar-base-color: #CFCFCF; scrollbar-darkshadow-color: #FFFFFF; scrollbar-face-color: #CFCFCF; scrollbar-highlight-color: #FFFFFF; scrollbar-shadow-color: #595959
+}
+SELECT {
+	BACKGROUND-COLOR: #ffffff; COLOR: #666666; FONT-FAMILY: Tahoma, 돋움, verdana; FONT-SIZE: 8pt
+}
+
+A {
+	COLOR: #004080;
+}
+A:link {
+	COLOR: #004080; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #004080; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #004080; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff4080; TEXT-DECORATION: underline
+}
+
+.topInfo {
+	COLOR: white; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.menuTitle {
+	COLOR: #2A1C00; FONT-WEIGHT: bold
+}
+.menuTitle A:link {
+	COLOR: #2A1C00; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.menuTitle A:visited {
+	COLOR: #2A1C00; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.menuTitle A:active {
+	COLOR: #2A1C00; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.menuTitle A:hover {
+	COLOR: #1e90ff; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.menu {
+	COLOR: #2A1C00;
+}
+.menu A:link {
+	COLOR: #2A1C00; TEXT-DECORATION: none
+}
+.menu A:visited {
+	COLOR: #2A1C00; TEXT-DECORATION: none
+}
+.menu A:active {
+	COLOR: #2A1C00; TEXT-DECORATION: none
+}
+.menu A:hover {
+	COLOR: dimgray; TEXT-DECORATION: underline
+}
+.copyright {
+	COLOR: #95958D; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px
+}
+.copyright A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.copyright A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.copyright A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.copyright A:hover {
+	COLOR: #474747; TEXT-DECORATION: underline
+}
+.tableBG {
+	BACKGROUND-COLOR: black; layer-background-color: black
+}
+.tableTT {
+	BACKGROUND-COLOR: #FF9812; COLOR: white; FONT-WEIGHT: bold; HEIGHT: 22px; TEXT-ALIGN: center; layer-background-color: #FF9812
+}
+.tableTT2 {
+	BACKGROUND-COLOR: #497fa4; COLOR: white; HEIGHT: 22px; TEXT-ALIGN: left; layer-background-color: #497FA4
+}
+.tableTTY {
+	BACKGROUND-COLOR: #FF9812; COLOR: white; FONT-WEIGHT: bold; HEIGHT: 22px; TEXT-ALIGN: center; layer-background-color: #FF9812
+}
+.tableCT {
+	BACKGROUND-COLOR: #FFF5CE; COLOR: black; HEIGHT: 22px; WIDTH: 100px; layer-background-color: #FFF5CE
+}
+.tableCTct {
+	BACKGROUND-COLOR: #FFF5CE; COLOR: black; HEIGHT: 22px; TEXT-ALIGN: center; layer-background-color: #FFF5CE
+}
+.tableCO {
+	BACKGROUND-COLOR: #FFFFFF; COLOR: black; HEIGHT: 22px; layer-background-color: #FFFFFF
+}
+.tableCOct {
+	BACKGROUND-COLOR: #FFFFFF; COLOR: black; HEIGHT: 22px; TEXT-ALIGN: center; layer-background-color: #FFFFFF
+}
+.tableCOrt {
+	BACKGROUND-COLOR: #FFFFFF; COLOR: black; HEIGHT: 22px; TEXT-ALIGN: right; layer-background-color: #FFFFFF
+}
+.tableUnView {
+	BACKGROUND-COLOR: white; COLOR: red; HEIGHT: 30px; TEXT-ALIGN: center; layer-background-color: white
+}
+.tableSccss {
+	BACKGROUND-COLOR: white; COLOR: #6495ed; HEIGHT: 30px; LINE-HEIGHT: 20px; layer-background-color: white
+}
+.tableSccssCt {
+	BACKGROUND-COLOR: white; COLOR: #6495ed; HEIGHT: 30px; LINE-HEIGHT: 20px; TEXT-ALIGN: center; layer-background-color: white
+}
+.tableFail {
+	BACKGROUND-COLOR: white; COLOR: red; HEIGHT: 30px; LINE-HEIGHT: 20px; TEXT-ALIGN: center; layer-background-color: white
+}
+.tableFailCt {
+	BACKGROUND-COLOR: white; COLOR: red; HEIGHT: 30px; LINE-HEIGHT: 20px; layer-background-color: white
+}
+.tableAlert {
+	BACKGROUND-COLOR: #f9f9f9; COLOR: #ff5809; HEIGHT: 22px; LINE-HEIGHT: 20px; layer-background-color: #f9f9f9
+}
+.tableAlertCt {
+	BACKGROUND-COLOR: #f9f9f9; COLOR: #ff5809; HEIGHT: 22px; LINE-HEIGHT: 20px; TEXT-ALIGN: center; layer-background-color: #f9f9f9
+}
+.tableInfo {
+	BACKGROUND-COLOR: #e5e5e5; COLOR: #003900; HEIGHT: 22px; LINE-HEIGHT: 20px; layer-background-color: #E5E5E5
+}
+.tableInfoCt {
+	BACKGROUND-COLOR: #e5e5e5; COLOR: #003900; HEIGHT: 22px; LINE-HEIGHT: 20px; TEXT-ALIGN: center; layer-background-color: #E5E5E5
+}
+.searchBG {
+	BACKGROUND-COLOR: #6E6C68; layer-background-color: #6E6C68
+}
+.searchTT {
+	BACKGROUND-COLOR: #FF9812; COLOR: white; FONT-WEIGHT: bold; HEIGHT: 22px; TEXT-ALIGN: center; layer-background-color: #FF9812
+}
+.searchCO {
+	BACKGROUND-COLOR: #e5e5e5; TEXT-ALIGN: center; layer-background-color: #E5E5E5
+} 
+.searchCOSepa {
+	BACKGROUND-COLOR: #fbfbfb; layer-background-color: #fbfbfb
+}
+.searchUnView {
+	BACKGROUND-COLOR: white; COLOR: red; HEIGHT: 30px; TEXT-ALIGN: center; layer-background-color: white
+}
+.searchCount {
+	TEXT-ALIGN: right
+}
+.rowBG {
+	BACKGROUND-COLOR: black; layer-background-color: black
+}
+.rowTT {
+	BACKGROUND-COLOR: #f1f1f1; COLOR: #522E00; HEIGHT: 22px; TEXT-ALIGN: center; layer-background-color: #FFF5CE
+}
+.rowEvenColor {
+	BACKGROUND-COLOR: #e5e5e5; layer-background-color: #E5E5E5
+}
+.rowOddColor {
+	BACKGROUND-COLOR: #eeeeee; layer-background-color: #E5E5E5
+}
+.row {
+	COLOR: black; HEIGHT: 22px
+}
+.rowUnView {
+	BACKGROUND-COLOR: white; COLOR: red; HEIGHT: 30px; TEXT-ALIGN: center; layer-background-color: white
+}
+.rowAlignRt {
+	COLOR: black; HEIGHT: 22px; TEXT-ALIGN: right; padding-left:3; padding-right:3;
+}
+
+
+
+.rowAlignCt {
+	COLOR: black; HEIGHT: 22px; TEXT-ALIGN: center; padding-left:3; padding-right:3;
+} 
+.rowAlignLCt {
+	COLOR: black; HEIGHT: 22px; TEXT-ALIGN: left; padding-left:3; padding-right:3;
+}
+ 
+
+
+
+
+.rowAlignCt A:link {
+	COLOR: #00008b; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.rowAlignCt A:visited {
+	COLOR: #00008b; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.rowAlignCt A:active {
+	COLOR: #00008b; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.rowAlignCt A:hover {
+	COLOR: #6495ed; FONT-SIZE: 9pt; TEXT-DECORATION: underline
+}
+.rowReviewCt {
+	COLOR: black; HEIGHT: 22px; TEXT-ALIGN: left; padding-left:3; padding-right:3;
+}
+.rowReviewCt A:link {
+	COLOR: #00008b; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.rowReviewCt A:visited {
+	COLOR: #FF8C00; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.rowReviewCt A:active {
+	COLOR: #00008b; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.rowReviewCt A:hover {
+	COLOR: #6495ed; FONT-SIZE: 9pt; TEXT-DECORATION: underline
+}
+.row A:link {
+	COLOR: #00008b; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.row A:visited {
+	COLOR: #00008b; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.row A:active {
+	COLOR: #00008b; FONT-SIZE: 9pt; TEXT-DECORATION: none
+}
+.row A:hover {
+	COLOR: #6495ed; FONT-SIZE: 9pt; TEXT-DECORATION: underline
+}
+.multiPage {
+	COLOR: #000000; CURSOR: default; FONT-FAMILY: "MS Sans Serif", Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.multiPageSmall {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.emphasisRed {
+	COLOR: red
+}
+.emphasisRedCt {
+	COLOR: red; TEXT-ALIGN: center
+}
+.alert {
+	COLOR: #ff5809
+}
+.alertCt {
+	COLOR: #ff5809; TEXT-ALIGN: center
+}
+.readOnly {
+	BACKGROUND-COLOR: #efefef; COLOR: #6f6f6f;
+}
+.needOnly {
+	BACKGROUND-COLOR: #FFFFCB; COLOR: #6f6f6f;
+}
+.login_title {
+	background:url(../img/logo.gif) no-repeat; width:314px; height:70px; text-indent:-9999em; display:block; cursor:pointer;
+
+}
+.login_main {
+	font-size: 70px; font-family: tahoma; font-weight: bold; color: #ddccbb; text-decoration: none
+}
+.tb {
+	background-color: #e5e5e5; color: #003900; height: 22px; line-height: 20px; text-align: left
+}
+
+#box {
+scrollbar-face-color: #FFFFFF;
+scrollbar-highlight-color:#FFFFFF;
+scrollbar-3dlight-color:#666666;
+scrollbar-shadow-color:#666666;
+scrollbar-darkshadow-color: #FFFFFF;
+scrollbar-track-color: #FFFFFF;
+scrollbar-arrow-color:#333333;
+font-family:굴림;font-size:9pt;color:#222222;line-height:100%;width:100%;height:180; overflow:auto;
+}
+
+
+
+/* 캘린더 */
+#calendar1 {position:relative;background:url(http://img.noribox.com/b2b/netmarble/img/chart/calendar_bg1.gif);width:212px;height:160px;}
+#calendar1 #top{position:relative;width:210px;height:31px;top:10px;left:0; text-align:center;}
+#calendar1 #top img{ vertical-align:middle; border:0;}
+#calendar1 #top span{color:#fff;font-weight:bold;font-size:14px;width:100px;padding:0 5px 0 5px;display:inline-block}
+#calendar1 #close{position:absolute;top:7px;left:196px;}
+#calendar1 #close img{border:0;}
+
+/* 캘린더_일간 */
+#calendar1 #day{position:relative;width:208px;top:0;left:1px;background:url(http://img.noribox.com/b2b/netmarble/img/chart/calendar_day_bg.gif) repeat-x; border:}
+#calendar1 #day table {position:relative;top:2px; margin:0 auto;}
+#calendar1 #day table th{width:27px;height:20px;color:#666; font-weight:100; font-family:돋움;font-size:11px;text-align:center;padding:3px 0 3px 0;}
+#calendar1 #day table th.w1{color:#FF5A00}
+#calendar1 #day table td{width:27px;height:16px;color:#666;font-family:Tahoma;font-size:10px;text-align:center; display:block;} 
+#calendar1 #day table td.sunday{color:#FF5A00}
+#calendar1 #day table td.today{color:#000;font-weight:bold;}
+#calendar1 #day table td.after{color:#aaa;}
+#calendar1 #day table td.hit{color:#FF5A00;background:#eee;font-weight:bold;}
+
+/* 출시 준비 게임 */
+#calendar { position:relative; width:100%}
+#today { font-family:dotum,Tahoma; letter-spacing:-1px; position:relative; width:195px; height:16px; font-size:11px;}
+#today.m1, #today.m1 a {color:#267ed0; }
+#today.m2, #today.m2 a {color:#8a26d0; }
+#today.m3, #today.m3 a {color:#e44b88; }
+#today.m4, #today.m4 a {color:#08a121; }
+#today.m5, #today.m5 a {color:#f48207; }
+#today.m6, #today.m6 a {color:#cd283c; }
+#today.m7, #today.m7 a {color:#5d5d5d; }
+#today.m8, #today.m8 a {color:#1fadaf; }
+#today.m9, #today.m9 a {color:#116140; }
+#today span { position:relative; vertical-align:top; margin:3px; top:1px; line-height:15px;}
+
+/* UI Object */ 
+
+.tab_face{padding:0 0 15px 0}  
+.tab_face ul{position:relative;margin:0;padding:0;_padding:2px 0 0 0;border-bottom:2px solid #396ab5;font-family:Tahoma, Sans-serif;font-size:12px;list-style:none;*zoom:1}  
+.tab_face ul:after{display:block;clear:both;content:""}  
+.tab_face li{float:left;margin-right:1px;background:#4cb1e5;}  
+.tab_face li a,  
+.tab_face li a span{position:relative;cursor:pointer}  
+.tab_face li a{float:left;text-decoration:none}
+.tab_face li a:hover { text-decoration:none}
+.tab_face li a span{display:inline-block;padding:6px 25px 6px 25px;color:#fff}  
+.tab_face li ul{display:none;overflow:hidden;position:absolute;top:40px;left:0;width:100%;margin:0;padding:0;border:0;white-space:nowrap;list-style:none;*zoom:1}  
+.tab_face li ul:after{display:block;clear:both;content:""}  
+.tab_face li li{overflow:visible;position:relative;left:-1px;padding:0 10px;border-left:1px solid #ddd;background:transparent}  
+.tab_face li li a{padding:0;margin:0;font-weight:normal;color:#666}  
+.tab_face.m1 .m1,  
+.tab_face.m2 .m2,  
+.tab_face.m3 .m3,  
+.tab_face.m4 .m4,  
+.tab_face.m5 .m5,  
+.tab_face.m6 .m6,  
+.tab_face.m7 .m7,  
+.tab_face.m8 .m8,  
+.tab_face.m9 .m9,  
+.tab_face.m10 .m10,  
+.tab_face.m11 .m11,  
+.tab_face.m12 .m12{margin-top:-1px;background-color:#396ab5;}  
+.tab_face.m1 .m1 a span,  
+.tab_face.m2 .m2 a span,  
+.tab_face.m3 .m3 a span,  
+.tab_face.m4 .m4 a span,  
+.tab_face.m5 .m5 a span,  
+.tab_face.m6 .m6 a span,  
+.tab_face.m7 .m7 a span,  
+.tab_face.m8 .m8 a span,  
+.tab_face.m9 .m9 a span,  
+.tab_face.m10 .m10 a span,  
+.tab_face.m11 .m11 a span,  
+.tab_face.m12 .m12 a span{padding-top:7px;padding-bottom:7px;font-weight:bold;letter-spacing:-1px}  
+.tab_face.m1 .m1 ul,  
+.tab_face.m2 .m2 ul,  
+.tab_face.m3 .m3 ul,  
+.tab_face.m4 .m4 ul,  
+.tab_face.m5 .m5 ul,  
+.tab_face.m6 .m6 ul,  
+.tab_face.m7 .m7 ul,  
+.tab_face.m8 .m8 ul,  
+.tab_face.m9 .m9 ul,  
+.tab_face.m10 .m10 ul,  
+.tab_face.m11 .m11 ul,  
+.tab_face.m12 .m12 ul{display:block}  
+.tab_face li li a:hover,  
+.tab_face li li a:active,  
+.tab_face li li a:focus,  
+.tab_face.s1 .s1 a,  
+.tab_face.s2 .s2 a,  
+.tab_face.s3 .s3 a,  
+.tab_face.s4 .s4 a,  
+.tab_face.s5 .s5 a,  
+.tab_face.s6 .s6 a,  
+.tab_face.s7 .s7 a,  
+.tab_face.s8 .s8 a,  
+.tab_face.s9 .s9 a,  
+.tab_face.s10 .s10 a,  
+.tab_face.s11 .s11 a,  
+.tab_face.s12 .s12 a{font-weight:bold;color:#333;letter-spacing:-1px}  
+.tab_face.js_off{padding:0}  
+.tab_face.js_off ul{border:0}  
+.tab_face.js_off li{float:none}  
+.tab_face.js_off li a{float:none;font-weight:bold}  
+.tab_face.js_off li ul{display:block;position:static;left:0;top:0;padding:5px 0;background:#fff}  
+.tab_face.js_off li li{display:inline}  
+.tab_face.js_off li li a{font-weight:normal !important;color:#333;letter-spacing:normal}  
+.tab_face.js_off li li a:hover,  
+.tab_face.js_off li li a:active,  
+.tab_face.js_off li li a:focus{text-decoration:underline}  
+
+/* //UI Object */ 
+
+.view_table td { font-size:12px; padding:5px;}
+.process td{ text-align:center; padding:5px; border:1px solid #999999}
+.process td.send { background-color:#ffdf7c}
+
+
+/* 진행상태 */
+.progress{height:25px;margin:10px 0 0;background:url(../img/bg_progress.gif);border-right:1px solid #e3e3e3;font-family:'돋움',dotum;font-size:11px;line-height:15px;letter-spacing:-1px}  
+.progress .tit{float:left;position:relative;z-index:1000;width:74px;height:100%;margin:0;padding:5px 0 0;background:url(../img/bg_progress_tit.gif) y-repeat;font-size:11px;color:#fff;line-height:15px;text-align:center}  
+.progress ol{float:left;margin:0;padding:0;list-style:none;}  
+.progress li,.progress li span{background:url(../img/bg_progress_item.gif) no-repeat;font-size:11px;white-space:nowrap;}  
+.progress li{float:left;margin:0 0 0 -13px;padding:0 0 0 13px;background-position:-287px 0}  
+.progress li span{display:inline-block;height:25px;padding:0 15px 0 13px;background-position:100% top;line-height:25px;}  
+.progress li.on{position:relative;z-index:10;background-position:0 100%;color:#fff}
+.progress li.on a{color:#fff}
+.progress li.on span{background:url(../img/bg_progress_item.gif) no-repeat 100% 100%}  
+.progress li.last,.progress li.last span{background:none}  
+.progress .right{position:absolute;top:6px;right:10px;color:#444}
+
+/* 연차관리 */
+#holiday { position:relative; width:195px; height:16px; overflow:hidden; color:#000p; font-size:12px; padding:5px; font-family:dotum, Tahoma; }
+#holiday .set { color:#ff0000;}
+#holiday a.who, a.who:link, a.who:visited, a.who:active, a.who:hover {COLOR:#000; text-decoration:underline; }
+
+.holiday_t td { padding:10px;}
+.holiday_t .h_day { width:74px; height:21px;}
+.holiday_t .h_phone {width:155px; height:21px;}
+.holiday_t .h_text { width:420px; height:120px;}  

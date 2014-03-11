@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+                        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+                        
+<sqlMap namespace="GAME">
+	
+	<typeAlias alias="Game" type="nextep.game.Game"/>
+	
+			
+	<resultMap id="resultGameList" class="Game">
+		<result property="game_seq" column="GAME_SEQ"  />	
+		<result property="game_nm" column="GAME_NM" />	
+		<result property="release_date" column="RELEASE_DATE" />	
+		<result property="cp_no" column="CP_NO" />								
+		<result property="reg_date" column="REG_DATE" />
+		<result property="fee_yn" column="FEE_YN" />		
+		<result property="game_size" column="GAME_SIZE" />
+		<result property="grade_code" column="GRADE_CODE" />
+		<result property="genre_code" column="GENRE_CODE" />
+		<result property="genre_nm" column="GENRE_NM" />
+		<result property="grade_nm" column="GRADE_NM" />		
+		<result property="cp_id" column="CP_ID" />
+		<result property="company_nm" column="COMPANY_NM" />
+		<result property="recom_yn" column="RECOM_YN" />
+		
+	</resultMap>
+	
+	
+	
+	<select id="getGameCount" parameterClass="Game"  resultClass="java.lang.Integer">
+		SELECT  COUNT(*) CNT
+		FROM GT_GAME A LEFT JOIN GT_GAME_LAN B ON A.GAME_SEQ=B.GAME_SEQ
+		LEFT OUTER JOIN (SELECT * FROM GT_GAME_PRICE WHERE GETDATE() BETWEEN BEGIN_DATE AND END_DATE) C ON A.GAME_SEQ=C.GAME_SEQ
+		LEFT OUTER JOIN CT_CODE D ON A.GENRE_GRP_CODE=D.GRP_CODE AND A.GENRE_CODE=D.CODE
+		LEFT OUTER JOIN CT_CODE E ON A.GRADE_GRP_CODE=E.GRP_CODE AND A.GRADE_CODE=E.CODE
+		LEFT OUTER JOIN GT_CP F ON A.CP_NO=F.CP_NO
+		WHERE B.NATION_CODE='KR'
+		<isNotEmpty property="cp_no" prepend="and">
+			A.CP_NO=#cp_no#			
+		</isNotEmpty>
+		<isNotEmpty property="search_str" prepend="and">			
+			GAME_NM like '%' + #search_str#+'%'			
+		</isNotEmpty>
+	</select>
+	
+	
+	<select id="getGAMEList" parameterClass="Game" resultMap="resultGameList">	
+		SELECT * FROM
+		(
+			SELECT  ROW_NUMBER() OVER(ORDER BY A.GAME_SEQ DESC) RM, A.GAME_SEQ, GAME_NM, CONVERT(VARCHAR(10), RELEASE_DATE, 126) RELEASE_DATE, 
+			A.CP_NO, CONVERT(VARCHAR(10), A.REG_DATE, 126) REG_DATE, FEE_YN, GAME_SIZE, GRADE_CODE, GENRE_CODE, 
+			D.CODE_NM GENRE_NM, E.CODE_NM GRADE_NM, F.CP_ID, F.COMPANY_NM, RECOM_YN
+			FROM GT_GAME A WITH(NOLOCK) LEFT JOIN GT_GAME_LAN B ON A.GAME_SEQ=B.GAME_SEQ
+			LEFT OUTER JOIN (SELECT * FROM GT_GAME_PRICE WHERE GETDATE() BETWEEN BEGIN_DATE AND END_DATE AND MARKET_CODE='M01') C ON A.GAME_SEQ=C.GAME_SEQ
+			LEFT OUTER JOIN CT_CODE D ON A.GENRE_GRP_CODE=D.GRP_CODE AND A.GENRE_CODE=D.CODE
+			LEFT OUTER JOIN CT_CODE E ON A.GRADE_GRP_CODE=E.GRP_CODE AND A.GRADE_CODE=E.CODE
+			LEFT OUTER JOIN GT_CP F ON A.CP_NO=F.CP_NO
+			WHERE B.NATION_CODE='KR'	
+			<isNotEmpty property="cp_no" prepend="and">
+				A.CP_NO=#cp_no#			
+			</isNotEmpty>
+			<isNotEmpty property="search_str" prepend="and">			
+				GAME_NM like '%' + #search_str#+'%'			
+			</isNotEmpty>					
+		) T1 WHERE RM BETWEEN #start_num# AND #end_num#		
+	</select>
+	
+		
+	
+	
+	<select id="getGameView" parameterClass="java.lang.Integer" resultClass="Game">
+	    SELECT TOP 1  A.GAME_SEQ, CONVERT(VARCHAR(8), RELEASE_DATE, 112) RELEASE_DATE, CP_NO, CONVERT(VARCHAR(8), A.REG_DATE, 112) REG_DATE, 
+	    FEE_YN, GAME_SIZE, GRADE_CODE, GENRE_CODE, D.CODE_NM GENRE_NM, E.CODE_NM GRADE_NM, ANDROID_REQUIREMENT, IOS_REQUIREMENT, SALE_CODE,
+	    MOVIE_URL, RECOM_YN
+		FROM GT_GAME A WITH(NOLOCK) LEFT OUTER JOIN CT_CODE D WITH(NOLOCK) ON A.GENRE_GRP_CODE=D.GRP_CODE AND A.GENRE_CODE=D.CODE
+		LEFT OUTER JOIN CT_CODE E ON A.GRADE_GRP_CODE=E.GRP_CODE AND A.GRADE_CODE=E.CODE
+		WHERE A.GAME_SEQ=#game_seq#
+	</select>
+	
+	<resultMap id="resultGameLanList" class="Game">
+		<result property="game_seq" column="GAME_SEQ"  />	
+		<result property="gl_seq" column="GL_SEQ" />	
+		<result property="game_nm" column="GAME_NM" />	
+		<result property="short_desc" column="SHORT_DESC" />								
+		<result property="game_desc" column="GAME_DESC" />
+		<result property="game_feather" column="GAME_FEATHER" />		
+		<result property="nation_code" column="NATION_CODE" />
+		<result property="reg_date" column="REG_DATE" />
+		<result property="nation_nm" column="NATION_NM" />				
+	</resultMap>
+	
+	<select id="getGameLanList" parameterClass="java.lang.Integer" resultMap="resultGameLanList">	
+		SELECT GAME_SEQ, GL_SEQ, GAME_NM, SHORT_DESC, GAME_DESC, GAME_FEATHER, A.NATION_CODE, CONVERT(VARCHAR(10), REG_DATE, 126) REG_DATE, B.NATION_NM
+		FROM GT_GAME_LAN A, CT_NATION B
+		WHERE A.NATION_CODE=B.NATION_CODE
+		AND GAME_SEQ=#game_seq#
+	</select>
+	
+	
+	<select id="getGameLanView" parameterClass="java.lang.Integer" resultClass="Game">	
+		SELECT GAME_SEQ, GL_SEQ, GAME_NM, SHORT_DESC, GAME_DESC, GAME_FEATHER, A.NATION_CODE, CONVERT(VARCHAR(10), REG_DATE, 126) REG_DATE, B.NATION_NM
+		FROM GT_GAME_LAN A, CT_NATION B
+		WHERE A.NATION_CODE=B.NATION_CODE
+		AND GL_SEQ=#gl_seq#
+	</select>
+	
+	
+	<select id="checkGameLanCount" parameterClass="Game"  resultClass="java.lang.Integer">
+		SELECT COUNT(*) CNT 
+		FROM GT_GAME_LAN 
+		WHERE game_seq=#game_seq# 
+		AND NATION_CODE=#nation_code#
+	</select>
+	
+	
+	<select id="getGameSeq" resultClass="java.lang.Integer">
+		SELECT 
+			CASE WHEN MAX(GAME_SEQ) IS NULL 
+			THEN 
+				1 
+			ELSE 
+				MAX(GAME_SEQ)+1 
+			END GAME_SEQ  
+		FROM GT_GAME
+	</select>
+	
+	
+	<parameterMap id="paramInsertGame" class="Game">	   	    
+	    <parameter property="game_seq"  />	 	    
+	    <parameter property="release_date" />	    
+	    <parameter property="cp_no" />
+	    <parameter property="fee_yn" />
+	    <parameter property="android_requirement" />
+	    <parameter property="ios_requirement" />	    
+	    <parameter property="game_size" />
+	    <parameter property="grade_code" />
+	    <parameter property="genre_code" />	    	    	    	    	    	    	 	    
+	    <parameter property="movie_url" />
+	    <parameter property="recom_yn" />
+	    
+	</parameterMap>	
+	
+	<insert id="insGame" parameterMap="paramInsertGame">
+	<![CDATA[
+		INSERT INTO GT_GAME(GAME_SEQ, RELEASE_DATE, CP_NO, REG_DATE, FEE_YN, ANDROID_REQUIREMENT, IOS_REQUIREMENT, GAME_SIZE, GRADE_GRP_CODE, GRADE_CODE, 
+		GENRE_GRP_CODE, GENRE_CODE, SALE_GRP_CODE, SALE_CODE, MOVIE_URL, RECOM_YN)
+		values(?, convert(datetime, ?), ?, getdate(), ?, ?, ?,	?, 'GRC', ?, 'GEC', ?, 'SAC', 'S01', ?, ?)		
+	]]>
+	</insert>
+	
+	<parameterMap id="paramInsertGameLan" class="Game">	   	    
+	    <parameter property="game_seq"  />	 	    
+	    <parameter property="game_nm" />	    
+	    <parameter property="short_desc" />
+	    <parameter property="game_desc" />
+	    <parameter property="game_feather" />
+	    <parameter property="nation_code" />    	 	    
+	</parameterMap>	
+	
+	<insert id="insGameLan" parameterMap="paramInsertGameLan">
+	<![CDATA[
+		INSERT INTO GT_GAME_LAN(GAME_SEQ, GAME_NM, SHORT_DESC, GAME_DESC, GAME_FEATHER, NATION_CODE, REG_DATE)
+		VALUES(?, ?, ?, ?, ?, ?, getdate())		
+	]]>
+	</insert>
+	
+	
+	<update id="uptGame" parameterClass="java.util.Map">
+	<![CDATA[
+		UPDATE GT_GAME SET RELEASE_DATE=convert(datetime, #release_date#), CP_NO=#cp_no#, FEE_YN=#fee_yn#, ANDROID_REQUIREMENT=#android_requirement#, 
+		IOS_REQUIREMENT=#ios_requirement#, GAME_SIZE=#game_size#, GRADE_CODE=#grade_code#, GENRE_CODE=#genre_code#, SALE_CODE=#sale_code#, 
+		movie_url=#movie_url#, recom_yn=#recom_yn#
+		where GAME_SEQ=#game_seq#				
+	]]>
+	</update>
+	
+	
+	<update id="uptGameLan" parameterClass="java.util.Map">
+	<![CDATA[
+		UPDATE GT_GAME_LAN SET GAME_NM=#game_nm#, SHORT_DESC=#short_desc#, GAME_DESC=#game_desc#, GAME_FEATHER=#game_feather#
+		where GL_SEQ=#gl_seq#				
+	]]>
+	</update>
+	
+	
+	
+	<delete id="delGameLan" parameterClass="java.lang.Integer">
+	<![CDATA[
+		DELETE FROM GT_GAME_LAN WHERE GL_SEQ=#gl_seq#				
+	]]>
+	</delete>
+	
+	
+	
+	<resultMap id="resultGamePriceList" class="Game">
+		<result property="game_seq" column="GAME_SEQ"  />	
+		<result property="price_seq" column="PRICE_SEQ" />	
+		<result property="begin_date" column="BEGIN_DATE" />	
+		<result property="end_date" column="END_DATE" />								
+		<result property="price" column="PRICE" />						
+		<result property="market_url" column="MARKET_URL" />
+		<result property="market_grp_code" column="MARKET_GRP_CODE" />
+		<result property="market_code" column="MARKET_CODE" />
+		<result property="market_code_nm" column="MARKET_CODE_NM" />
+	</resultMap>
+	
+	<select id="getGamePriceList" parameterClass="java.lang.Integer" resultMap="resultGamePriceList">	
+		SELECT GAME_SEQ, PRICE_SEQ, CONVERT(VARCHAR(10), BEGIN_DATE, 126) BEGIN_DATE, CONVERT(VARCHAR(10), END_DATE, 126) END_DATE, 
+		PRICE, MARKET_URL, MARKET_GRP_CODE, MARKET_CODE, B.CODE_NM MARKET_CODE_NM
+		FROM GT_GAME_PRICE A LEFT OUTER JOIN CT_CODE B ON A.MARKET_GRP_CODE=B.GRP_CODE AND A.MARKET_CODE=B.CODE
+		WHERE GAME_SEQ=#game_seq#
+	</select>
+	
+	
+	<select id="getPriceSeq" parameterClass="java.lang.Integer" resultClass="java.lang.Integer">	
+		SELECT CASE WHEN MAX(PRICE_SEQ) IS NULL 
+			THEN 
+				1 
+			ELSE 
+				MAX(PRICE_SEQ)+1 
+			END PRICE_SEQ
+		FROM GT_GAME_PRICE
+		WHERE GAME_SEQ=#game_seq#
+	</select>
+	
+	
+	<insert id="insGamePrice" parameterClass="java.util.Map">
+	<![CDATA[
+		INSERT INTO GT_GAME_PRICE(GAME_SEQ, PRICE_SEQ, BEGIN_DATE, END_DATE, PRICE, MARKET_URL, MARKET_GRP_CODE, MARKET_CODE)
+		VALUES(#game_seq#, #price_seq#, getdate(), CONVERT(datetime, '9999-12-31 23:59:59', 120), #price#, #market_url#, 'MAC', #market_code#)
+	]]>
+	</insert>
+	
+	<update id="uptGamePrice" parameterClass="java.util.Map">
+	<![CDATA[
+		update GT_GAME_PRICE set PRICE=#price#, MARKET_URL=#market_url#, MARKET_CODE=#market_code#
+		where GAME_SEQ=#game_seq# and PRICE_SEQ=#price_seq#
+	]]>
+	</update>
+	
+	<update id="uptGamePriceEnd" parameterClass="java.util.Map">
+	<![CDATA[
+		update GT_GAME_PRICE set END_DATE=BEGIN_DATE
+		where GAME_SEQ=#game_seq# and PRICE_SEQ=#price_seq#
+	]]>
+	</update>
+	
+	<resultMap id="resultGameImgList" class="Game">
+		<result property="game_seq" column="GAME_SEQ"  />	
+		<result property="img_seq" column="IMG_SEQ" />	
+		<result property="type_grp_code" column="TYPE_GRP_CODE" />	
+		<result property="type_code" column="TYPE_CODE" />								
+		<result property="file_nm" column="FILE_NM" />
+		<result property="reg_date" column="REG_DATE" />
+		<result property="type_nm" column="TYPE_NM" />						
+	</resultMap>
+	
+	<select id="getGameImgList" parameterClass="java.lang.Integer" resultMap="resultGameImgList">	
+		SELECT GAME_SEQ, IMG_SEQ, TYPE_GRP_CODE, TYPE_CODE, FILE_NM, CONVERT(VARCHAR(19), REG_DATE, 121) REG_DATE, CODE_NM TYPE_NM  
+		FROM GT_GAME_IMG A, CT_CODE B
+		WHERE A.TYPE_GRP_CODE=B.GRP_CODE AND A.TYPE_CODE=B.CODE
+		AND GAME_SEQ=#game_seq#
+	</select>
+	
+	<select id="getImgSeq" parameterClass="java.lang.Integer" resultClass="java.lang.Integer">	
+		SELECT CASE WHEN MAX(IMG_SEQ) IS NULL 
+			THEN 
+				1 
+			ELSE 
+				MAX(IMG_SEQ)+1 
+			END IMG_SEQ
+		FROM GT_GAME_IMG
+		WHERE GAME_SEQ=#game_seq#
+	</select>
+	
+	<insert id="insGameImg" parameterClass="java.util.Map">
+	<![CDATA[
+		INSERT INTO GT_GAME_IMG(GAME_SEQ, IMG_SEQ, TYPE_CODE, TYPE_GRP_CODE, FILE_NM, REG_DATE)
+		VALUES(#game_seq#, #img_seq#, #type_code#, 'TYC', #file_nm#, getdate())
+	]]>
+	</insert>
+	
+	<delete id="delGameImg" parameterClass="java.util.Map">
+	<![CDATA[
+		DELETE FROM GT_GAME_IMG 
+		WHERE GAME_SEQ=#game_seq# and IMG_SEQ=#img_seq#
+	]]>
+	</delete>
+	
+
+	
+	
+</sqlMap>

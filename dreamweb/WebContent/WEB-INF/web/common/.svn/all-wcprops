@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/common
+END
+common.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/common/common.jsp
+END
+header.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/common/header.jsp
+END
+check_user.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/common/check_user.jsp
+END

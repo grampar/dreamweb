@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/notice
+END
+modify.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/notice/modify.jsp
+END
+view_yn_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/notice/view_yn_ok.jsp
+END
+write_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/notice/write_ok.jsp
+END
+listdel_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/notice/listdel_ok.jsp
+END
+list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/notice/list.jsp
+END
+write.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/notice/write.jsp
+END
+del_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/notice/del_ok.jsp
+END
+modify_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/notice/modify_ok.jsp
+END
+test.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/notice/test.jsp
+END
+view.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/notice/view.jsp
+END

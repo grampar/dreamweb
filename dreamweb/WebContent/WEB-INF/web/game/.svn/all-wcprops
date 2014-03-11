@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/game
+END
+modify_lan_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/game/modify_lan_ok.jsp
+END
+file_upload_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/game/file_upload_ok.jsp
+END
+img_write_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/game/img_write_ok.jsp
+END
+img_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/game/img_list.jsp
+END
+modify.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/dream/!svn/ver/4/trunk/WebContent/WEB-INF/web/game/modify.jsp
+END
+write_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/game/write_ok.jsp
+END
+list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/dream/!svn/ver/4/trunk/WebContent/WEB-INF/web/game/list.jsp
+END
+write.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/dream/!svn/ver/4/trunk/WebContent/WEB-INF/web/game/write.jsp
+END
+img_del.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/game/img_del.jsp
+END
+modify_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/game/modify_ok.jsp
+END
+modify_lan.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/game/modify_lan.jsp
+END
+del_lan_ok.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/game/del_lan_ok.jsp
+END

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xmlns:aop="http://www.springframework.org/schema/aop"
+	     xmlns:tx="http://www.springframework.org/schema/tx"
+	     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+     
+     
+     <!--       
+     <bean id="nameMatchAs" class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">
+         <property name="properties">
+             <props>
+                 <prop key="add*">PROPAGATION_REQUIRED</prop>
+                 <prop key="update*">PROPAGATION_REQUIRED</prop>
+                 <prop key="remove*">PROPAGATION_REQUIRED</prop>
+                 <prop key="findBoardWithView">PROPAGATION_REQUIRED</prop>
+                 <prop key="*">PROPAGATION_REQUIRED, readOnly</prop>
+             </props>
+         </property>
+     </bean>
+	
+       
+     <bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+         <property name="transactionManager">
+             <ref bean="transactionManager" />
+         </property>
+         <property name="transactionAttributeSource">
+             <ref bean="nameMatchAs" />
+         </property>
+     </bean>
+	  
+     <bean id="autoProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+         <property name="interceptorNames">
+             <list>
+                 <idref local="transactionInterceptor" />
+             </list>
+         </property>
+         <property name="beanNames">
+             <list>                                     
+                 <idref bean="newDevelopService" />                 
+             </list>
+         </property>
+     </bean>
+     
+      -->
+     
+     
+    
+     
+ </beans>

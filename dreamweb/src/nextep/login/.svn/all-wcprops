@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/dream/!svn/ver/2/trunk/src/nextep/login
+END
+login.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/dream/!svn/ver/2/trunk/src/nextep/login/login.xml
+END
+Login.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/dream/!svn/ver/2/trunk/src/nextep/login/Login.java
+END
+LoginDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/dream/!svn/ver/2/trunk/src/nextep/login/LoginDao.java
+END
+LoginDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/dream/!svn/ver/2/trunk/src/nextep/login/LoginDaoImpl.java
+END
+LoginController.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/dream/!svn/ver/2/trunk/src/nextep/login/LoginController.java
+END

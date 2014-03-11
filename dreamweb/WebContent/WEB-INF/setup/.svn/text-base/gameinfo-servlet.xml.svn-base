@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+		
+		
+	<!-- ============================== game ======================= -->	
+	
+	<bean id="gameController" class="nextep.game.GameController">
+		<property name="methodNameResolver">
+			<ref local="gameCommonMethodNameResolver"/>
+		</property>	
+		<property name="gameDao" ref="gameDao" />
+		<property name="commonDao" ref="commonDao" />
+		<property name="uploadDir" value="D:/java_web/dreamweb/WebContent/" />
+	</bean>
+	
+	<bean id="gameCommonMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">	
+	    <property name="mappings">
+		<props>
+	   	    <prop key="/game/list.do">getGameList</prop>	   	    	    
+	   	    <prop key="/game/write.do">getGameWrite</prop>
+	   	    <prop key="/game/write_ok.do">insGame</prop>
+	   	    <prop key="/game/img_file_upload.do">insGameImageUpload</prop>
+	   	    <prop key="/game/modify.do">getGameModofy</prop>
+	   	    <prop key="/game/modify_ok.do">uptGame</prop>
+	   	    <prop key="/game/lan_write_ok.do">insGameLan</prop>
+	   	    <prop key="/game/lan_modify.do">getGameLan</prop>
+	   	    <prop key="/game/lan_modify_ok.do">uptGameLan</prop>
+	   	    <prop key="/game/lan_del_ok.do">delGameLan</prop>
+	   	    	   	    
+	   	    <prop key="/game/price_write_ok.do">insGamePrice</prop>	   	    
+	   	    <prop key="/game/price_modify_ok.do">uptGamePrice</prop>
+	   	    <prop key="/game/price_modify_end.do">uptGamePriceEnd</prop>
+	   	    
+	   	    <prop key="/game/img_list.do">getGameImgList</prop>	   	    	   	    
+	   	    <prop key="/game/img_write_ok.do">insGameImgUpload</prop>
+	   	    <prop key="/game/img_del_ok.do">delGameImg</prop>
+	   	    
+	   	    
+		</props>
+	    </property>
+	</bean>
+	
+	<bean id="gameCommonUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	    <property name="mappings">
+	        <props>
+	        	<prop key="/game/list.do">gameController</prop>	 	   			 	   				   	    	
+	 	   		<prop key="/game/write.do">gameController</prop>	 	   		
+	 	   		<prop key="/game/write_ok.do">gameController</prop>	 	   		 		
+	 	   		<prop key="/game/img_file_upload.do">gameController</prop>
+	 	   		<prop key="/game/modify.do">gameController</prop>
+	 	   		<prop key="/game/modify_ok.do">gameController</prop>
+	 	   		<prop key="/game/lan_write_ok.do">gameController</prop>
+	 	   		<prop key="/game/lan_modify.do">gameController</prop>
+	 	   		<prop key="/game/lan_modify_ok.do">gameController</prop>
+	 	   		<prop key="/game/lan_del_ok.do">gameController</prop>
+	 	   		
+	 	   		<prop key="/game/price_write_ok.do">gameController</prop>
+	 	   		<prop key="/game/price_modify_ok.do">gameController</prop>
+	 	   		<prop key="/game/price_modify_end.do">gameController</prop>	 	   		
+	 	   		
+	 	   		<prop key="/game/img_list.do">gameController</prop>
+	 	   		<prop key="/game/img_write_ok.do">gameController</prop>
+	 	   		<prop key="/game/img_del_ok.do">gameController</prop>
+	 	   		
+	        </props>
+	    </property>
+	</bean>
+	
+	
+	
+	
+
+</beans>

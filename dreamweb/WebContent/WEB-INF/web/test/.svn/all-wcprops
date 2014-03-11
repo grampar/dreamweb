@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/test
+END
+login.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/test/login.jsp
+END
+loginsuccess.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/dream/!svn/ver/2/trunk/WebContent/WEB-INF/web/test/loginsuccess.jsp
+END
