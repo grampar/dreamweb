@@ -40,6 +40,8 @@ public class CpController extends MultiActionController {
 		
 		System.out.println("asdfasdf");
 		
+		System.out.println("asdfasdf");
+		
 		String search_str = (request.getParameter("search_str")!=null)? request.getParameter("search_str") : "";
 		int go_page = (request.getParameter("go_page")!=null)? Integer.parseInt(request.getParameter("go_page")) : 1;
 				
